@@ -1,0 +1,21 @@
+<h2>Access your account</h2>
+
+<p>
+	If you don't have an account yet, <%= link_to "signup for free!", url(:new_user) %>
+</p>
+
+<%= error_messages_for session.authentication %>
+
+<%= form :action => url(:login), :method => :put do %>
+	<p>
+		<%= text_field :login, :label => "Login: ", :id => 'login' %>
+	</p>
+	
+	<p>
+		<%= password_field :password, :label => "Password: ", :id => 'password' %>
+	</p>
+	
+	<p class="submit">
+		<%= submit "Log me in" %>
+	</p>
+<% end =%>

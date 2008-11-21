@@ -1,0 +1,24 @@
+<h2>Welcome to Contacts!</h2>
+
+<p>
+	Contacts provides a flexible and convenient way to store contact information for family, friends, and colleagues online.
+</p>
+
+<ul>
+	<li>Keep contact info centralized, sharable, and safe online.</li>
+	<li>It's free. And it's simple.</li>
+</ul>
+
+<p class="highlight">
+	<% if session.authenticated? %>
+		<%= link_to 'View your contacts', url(:contacts) %> or
+		<%= link_to 'Create one', url(:new_contact) %>
+		<br />
+		It's so simple to manage your contacts. Check it out!
+	<% else %>
+		<%= link_to 'Signup for free', url(:new_user) %> or
+		<%= link_to 'Access your account', url(:login) %>
+		<br/>
+		Signup and be using Contacts in less than 30 seconds!
+	<% end %>
+</p>
