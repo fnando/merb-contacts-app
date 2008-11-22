@@ -8,7 +8,8 @@ class Users < Application
     @user = User.new(user)
     
     if @user.save
-      redirect url(:login), :message => {:notice => "Welcome to Contacts! Please login to access your account."}
+      message[:notice] = "Welcome to Contacts! Please login to access your account."
+  	  redirect url(:session, :new), :message => message
     else
       render :new
     end

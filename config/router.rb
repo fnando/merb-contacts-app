@@ -2,7 +2,10 @@ Merb.logger.info("Compiling routes...")
 Merb::Router.prepare do
   resources :users
   resources :session
-  resources :contacts
+  
+  #authenticate do
+    resources :contacts
+  #end
   
   slice(:merb_auth_slice_password, :name_prefix => nil, :path_prefix => "")
   default_routes

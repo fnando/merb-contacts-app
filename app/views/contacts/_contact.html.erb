@@ -1,0 +1,45 @@
+<div class="vcard">
+	<%= photo_tag contact.email %>
+	
+	<h3 class="n">
+		<%= contact.name %>
+	</h3>
+	
+	<div class="email-group">
+		<span class="label">Email</span> 
+		<span class="email"><%= link_to h(contact.email), "mailto:#{h contact.email}" %></span>
+	</div>
+	
+	<% unless contact.company.blank? %>
+		<div class="org">
+			<span class="label">Company</span>
+			<span class="organization-name"><%= h contact.company %></span>
+		</div>
+	<% end %>
+	
+	<% unless contact.address.blank? %>
+		<div class="adr">
+			<span class="type">Home</span>
+			<span class="street-address"><%= h contact.address %></span>
+		</div>
+	<% end %>
+	
+	<% unless contact.mobile.blank? %>	
+		<div class="tel mobile">
+			<span class="type">Mobile</span> 
+			<%= h contact.mobile %>
+		</div>
+	<% end %>
+	
+	<% unless contact.phone.blank? %>	
+		<div class="tel phone">
+			<span class="type">Phone</span> 
+			<%= h contact.phone %>
+		</div>
+	<% end %>
+	
+	<div class="actions">
+		<%= delete_button contact %> 
+		<%= link_to "Edit", url(:edit_contact, contact) %>
+	</div>
+</div>

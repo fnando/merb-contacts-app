@@ -1,1 +1,13 @@
-You're in index of the Contacts controller.
+<h2>Your contacts</h2>
+
+<p>
+	<%= link_to "Add contact", url(:new_contact) %>
+</p>
+
+<div id="contacts">
+	<% unless @contacts.empty? %>
+		<%= partial :contact, :with => @contacts %>
+	<% else %>
+		<p>You have no contacts</p>
+	<% end %>
+</div>

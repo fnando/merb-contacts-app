@@ -6,6 +6,7 @@
 body {
 	background: #727272 url(../images/bg.png) repeat-x;
 	font-family: "Lucida Grande", Arial;
+	font-size: 13px;
 	padding: 20px;
 }
 
@@ -32,7 +33,6 @@ h2 {
 }
 
 p, ul {
-	font-size: 13px;
 	padding: 10px 0;
 }
 
@@ -43,6 +43,11 @@ ul {
 label {
 	display: block;
 	font-size: 14px;
+	padding-bottom: 3px;
+}
+
+label span {
+	color: #999;
 }
 
 input[type=text],
@@ -58,6 +63,16 @@ a {
 
 a:hover {
 	color: #900;
+}
+
+p.submit a {
+	color: #f00;
+	padding: 5px;
+}
+
+p.submit a:hover {
+	background: #f00;
+	color: #fff;
 }
 
 /* error message */
@@ -138,4 +153,112 @@ p.login-info {
 	position: absolute;
 	right: 0;
 	top: 0;
+	
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+}
+
+/* vcard */
+#contacts {
+	padding-top: 10px;
+}
+
+.vcard {
+	background: #e9e9e9;
+	border: 1px solid #ddd;
+	font-size: 11px;
+	margin-bottom: 15px;
+	padding: 10px 10px 20px 60px;
+	position: relative;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+img.photo {
+	left: 10px;
+	position: absolute;
+}
+
+.vcard span {
+	font-weight: bold;
+}
+
+.vcard span.email,
+.vcard span.street-address,
+.vcard span.organization-name {
+	font-weight: normal;
+}
+
+.vcard .type:after,
+.vcard .label:after {
+	content: ":";
+}
+
+.vcard .email-group .label {
+	content: url(../images/mail.gif);
+}
+
+.vcard .adr .type {
+	content: url(../images/home.gif);
+}
+
+.vcard .mobile .type {
+	content: url(../images/mobile.gif);
+}
+
+.vcard .phone .type {
+	content: url(../images/phone.gif);
+}
+
+.vcard .org .label {
+	content: url(../images/globe.gif);
+}
+
+.vcard h3 {
+	font-size: 16px;
+}
+
+.vcard div {
+	padding-bottom: 3px;
+}
+
+.vcard .actions {
+	display: none;
+	padding: 0;
+}
+
+.vcard:hover .actions {
+	display: block;
+}
+
+.vcard .actions form {
+	bottom: 5px;
+	cursor: pointer;
+	display: inline;
+	position: absolute;
+	right: 5px;
+}
+
+.vcard .actions input {
+	background: none;
+	border: none;
+	color: #333;
+	cursor: pointer;
+}
+
+.vcard .actions a {
+	bottom: 5px;
+	color: #333;
+	position: absolute;
+	right: 50px;
+	text-decoration: none;
+}
+
+.vcard .actions input,
+.vcard .actions a {
+	font-size: 11px;
+}
+
+.vcard .actions form:before {
+	content: " | ";
 }

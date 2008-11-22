@@ -10,4 +10,8 @@ class Contact
   property :address, String
   
   belongs_to :user
+  
+  def self.sorted
+    all :order => [:name.asc]
+  end
 end

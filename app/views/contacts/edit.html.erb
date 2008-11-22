@@ -1,0 +1,12 @@
+<h2>Edit contact</h2>
+
+<%= error_messages_for @contact %>
+
+<%= form_for @contact, :action => url(:contact, @contact), :method => :put do %>
+	<%= partial :form %>
+	
+	<p class="submit">
+		<%= submit "Edit contact" %> or
+		<%= link_to "Cancel", url(:contacts) %>
+	</p>
+<% end =%>
